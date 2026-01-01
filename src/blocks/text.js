@@ -45,6 +45,29 @@ const textInput = {
   "style": "text_blocks",
   "extensions": ['parent_tooltip_when_inline'],
 };
+const numText = {
+  "type": "num_text",
+  "tooltip": "Returns a text or number based on the input.",
+  "helpUrl": "",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXT",
+      "text": ""
+    },
+    {
+      "type": "input_dummy",
+      "name": "NAME"
+    }
+  ],
+  "output": [
+    "String",
+    "Number"
+  ],
+  "style": "text_blocks",
+  "extensions": ['parent_tooltip_when_inline'],
+}
 
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
@@ -52,4 +75,5 @@ const textInput = {
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   addText,
   textInput,
+  numText,
 ]);
