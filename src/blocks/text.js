@@ -68,7 +68,25 @@ const numText = {
   "style": "text_blocks",
   "extensions": ['parent_tooltip_when_inline'],
 }
-
+const textJoin = {
+  "type": "join_text",
+  "tooltip": "Create a piece of text by joining together two items.",
+  "helpUrl": "",
+  "message0": "join %1 %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "A"
+    },
+    {
+      "type": "input_value",
+      "name": "B"
+    }
+  ],
+  "output": "String",
+  "style": "text_blocks",
+  "inputsInline": true
+}
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
@@ -76,4 +94,5 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   addText,
   textInput,
   numText,
+  textJoin,
 ]);
