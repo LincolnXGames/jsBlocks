@@ -494,6 +494,9 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'lists_create_with',
+          extraState: {
+            itemCount: 0,
+          },
         },
         {
           kind: 'block',
