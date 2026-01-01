@@ -67,7 +67,7 @@ const numText = {
   ],
   "style": "text_blocks",
   "extensions": ['parent_tooltip_when_inline'],
-}
+};
 const textJoin = {
   "type": "join_text",
   "tooltip": "Create a piece of text by joining together two items.",
@@ -86,7 +86,25 @@ const textJoin = {
   "output": "String",
   "style": "text_blocks",
   "inputsInline": true
-}
+};
+const toString = {
+  "type": "text_to_string",
+  "tooltip": "Converts anything into a string.",
+  "helpUrl": "",
+  "message0": "%1 to string %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "TEXT"
+    },
+    {
+      "type": "input_dummy",
+      "name": "NAME"
+    }
+  ],
+  "output": "String",
+  "style": "text_blocks",
+};
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
@@ -95,4 +113,5 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   textInput,
   numText,
   textJoin,
+  toString,
 ]);
