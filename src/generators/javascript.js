@@ -52,3 +52,23 @@ forBlock['text_input'] = function (block, generator) {
   const code = quote(text_text);
   return [code, jsGenerator.ORDER_ATOMIC];
 };
+
+forBlock['num_text'] = function (block, generator) {
+  const text_text = block.getFieldValue('TEXT');
+  const numerable = (string) => {
+    const coercedValue = Number(string);
+    if (!isNaN(coercedValue) && isFinite(coercedValue)) {
+      return true;
+    }
+    return false;
+  }
+  const quote = (string, end) => {
+    string = string
+      .replace(/\\/g, '\\\\')
+      .replace(/\n/g, '\\\n')
+      .replace(/'/g, "\\'");
+    return !end ? "'" + string + "'" : string;
+  }
+  const code = quote(text_text, numerable(text_text));
+  return [code, jsGenerator.ORDER_ATOMIC];
+};
