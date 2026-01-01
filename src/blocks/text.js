@@ -11,7 +11,7 @@
 // own custom blocks.
 const addText = {
   type: 'add_text',
-  message0: 'Add text %1',
+  message0: 'print %1',
   args0: [
     {
       type: 'input_value',
@@ -21,7 +21,7 @@ const addText = {
   ],
   previousStatement: null,
   nextStatement: null,
-  colour: 160,
+  style: 'text_blocks',
   tooltip: '',
   helpUrl: '',
 };
