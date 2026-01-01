@@ -88,3 +88,9 @@ forBlock['join_text'] = function (block, generator) {
   const code = forceString(value_a) + ' + ' + forceString(value_b);
   return [code, jsGenerator.ORDER_ADDITION];
 };
+
+forBlock['text_to_string'] = function (block, generator) {
+  const value_text = generator.valueToCode(block, 'TEXT', jsGenerator.ORDER_FUNCTION_CALL);
+  const code = `String(${value_text})`;
+  return [code, jsGenerator.ORDER_FUNCTION_CALL];
+};
