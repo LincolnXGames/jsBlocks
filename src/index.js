@@ -27,6 +27,24 @@ const ws = Blockly.inject(blocklyDiv, {
   theme,
 });
 
+function recolor(blockName, newColor) {
+  var oldInit = Blockly.Blocks[blockName].init;
+  Blockly.Blocks[blockName].init = function() {
+    oldInit.call(this);
+    this.setStyle(newColor);
+  };
+}
+
+recolor('controls_if', 'loop_blocks');
+recolor('controls_if_if', 'loop_blocks');
+recolor('controls_if_elseif', 'loop_blocks');
+recolor('controls_if_else', 'loop_blocks');
+recolor('logic_compare', 'math_blocks');
+recolor('logic_operation', 'math_blocks');
+recolor('logic_negate', 'math_blocks');
+recolor('logic_boolean', 'math_blocks');
+recolor('logic_null', 'math_blocks');
+
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
