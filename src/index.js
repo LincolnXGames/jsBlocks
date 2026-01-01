@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {blocks} from './blocks/text';
-import {forBlock} from './generators/javascript';
-import {save, load} from './serialization';
-import {toolbox} from './toolbox';
+import {blocks} from './blocks/text.js';
+import {forBlock} from './generators/javascript.js';
+import {save, load} from './serialization.js';
+import {toolbox} from './toolbox.js';
 
 const javascriptGenerator = Blockly.JavaScript;
 
