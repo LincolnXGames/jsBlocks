@@ -127,6 +127,20 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'text_to_string',
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
           type: 'text_append',
           inputs: {
             TEXT: {
