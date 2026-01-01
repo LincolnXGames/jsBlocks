@@ -11,6 +11,15 @@
 const jsGenerator = Blockly.JavaScript
 export const forBlock = Object.create(null);
 
+const strRegExp = /^\s*'([^']|\\')*'\s*$/;
+
+const forceString = (value) => {
+  if (strRegExp.test(value)) {
+    return value;
+  }
+  return 'String(' + value + ')';
+};
+
 forBlock['custom_ternary'] = function (block, generator) {
   const value_if = generator.valueToCode(block, 'IF', jsGenerator.ORDER_CONDITIONAL) || 'false';
   const value_then = generator.valueToCode(block, 'THEN', jsGenerator.ORDER_CONDITIONAL) || 'null';
@@ -71,4 +80,11 @@ forBlock['num_text'] = function (block, generator) {
   }
   const code = quote(text_text, numerable(text_text));
   return [code, jsGenerator.ORDER_ATOMIC];
+};
+
+forBlock['join_text'] = function (block, generator) {
+  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_NONE) || '';
+  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_NONE) || '';
+  const code = forceString(value_a) + ' + ' + forceString(value_b);
+  return [code, jsGenerator.ORDER_ADDITION];
 };
