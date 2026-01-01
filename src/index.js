@@ -5,6 +5,7 @@
  */
 
 import {blocks} from './blocks/text.js';
+import {controlsBlocks} from './blocks/controls.js';
 import {forBlock} from './generators/javascript.js';
 import {save, load} from './serialization.js';
 import {toolbox} from './toolbox.js';
@@ -15,6 +16,7 @@ const javascriptGenerator = Blockly.JavaScript;
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
+Blockly.common.defineBlocks(controlsBlocks);
 Object.assign(javascriptGenerator.forBlock, forBlock);
 
 // Set up UI elements and inject Blockly
