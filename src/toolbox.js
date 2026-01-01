@@ -91,7 +91,7 @@ export const toolbox = {
           inputs: {
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: '',
                 },
@@ -105,7 +105,7 @@ export const toolbox = {
           inputs: {
             VALUE: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: 'abc',
                 },
@@ -119,7 +119,7 @@ export const toolbox = {
           inputs: {
             VALUE: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: '',
                 },
@@ -132,13 +132,13 @@ export const toolbox = {
           type: 'text_indexOf',
           inputs: {
             VALUE: {
-              block: {
-                type: 'variables_get',
+              shadow: {
+                type: 'text_input',
               },
             },
             FIND: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: 'abc',
                 },
@@ -151,8 +151,8 @@ export const toolbox = {
           type: 'text_charAt',
           inputs: {
             VALUE: {
-              block: {
-                type: 'variables_get',
+              shadow: {
+                type: 'text_input',
               },
             },
           },
@@ -162,8 +162,8 @@ export const toolbox = {
           type: 'text_getSubstring',
           inputs: {
             STRING: {
-              block: {
-                type: 'variables_get',
+              shadow: {
+                type: 'text_input',
               },
             },
           },
@@ -174,7 +174,7 @@ export const toolbox = {
           inputs: {
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: 'abc',
                 },
@@ -188,7 +188,7 @@ export const toolbox = {
           inputs: {
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: 'abc',
                 },
@@ -202,12 +202,12 @@ export const toolbox = {
           inputs: {
             SUB: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
           },
@@ -218,17 +218,17 @@ export const toolbox = {
           inputs: {
             FROM: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
             TO: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
           },
@@ -239,7 +239,7 @@ export const toolbox = {
           inputs: {
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
               },
             },
           },
@@ -250,7 +250,7 @@ export const toolbox = {
           inputs: {
             TEXT: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: 'abc',
                 },
@@ -574,7 +574,7 @@ export const toolbox = {
           inputs: {
             DELIM: {
               shadow: {
-                type: 'text',
+                type: 'text_input',
                 fields: {
                   TEXT: ',',
                 },
