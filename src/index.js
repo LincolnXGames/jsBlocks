@@ -8,7 +8,6 @@ import {blocks} from './blocks/text';
 import {forBlock} from './generators/javascript';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
-import './index.css';
 
 const javascriptGenerator = Blockly.JavaScript;
 
