@@ -69,6 +69,24 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'custom_ternary',
+          inputs: {
+            THEN: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: 'foo',
+                },
+              },
+            },
+            ELSE: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: 'bar',
+                },
+              },
+            },
+          },
         },
       ],
     },
@@ -471,6 +489,24 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'logic_compare',
+          inputs: {
+            A: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+            B: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
         },
         {
           kind: 'block',
@@ -510,6 +546,14 @@ export const toolbox = {
           kind: 'block',
           type: 'lists_repeat',
           inputs: {
+            ITEM: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
             NUM: {
               shadow: {
                 type: 'math_number',
@@ -537,6 +581,14 @@ export const toolbox = {
                 type: 'variables_get',
               },
             },
+            FIND: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
           },
         },
         {
@@ -557,6 +609,14 @@ export const toolbox = {
             LIST: {
               block: {
                 type: 'variables_get',
+              },
+            },
+            TO: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
               },
             },
           },
