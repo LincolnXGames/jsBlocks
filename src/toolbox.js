@@ -106,6 +106,24 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'join_text',
+          inputs: {
+            A: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: 'foo',
+                },
+              },
+            },
+            B: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: 'bar',
+                },
+              },
+            },
+          },
         },
         {
           kind: 'block',
