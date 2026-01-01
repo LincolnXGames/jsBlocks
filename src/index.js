@@ -8,6 +8,7 @@ import {blocks} from './blocks/text.js';
 import {forBlock} from './generators/javascript.js';
 import {save, load} from './serialization.js';
 import {toolbox} from './toolbox.js';
+import './renderers/jsBlocksZelos.js'
 
 const javascriptGenerator = Blockly.JavaScript;
 
@@ -19,7 +20,10 @@ Object.assign(javascriptGenerator.forBlock, forBlock);
 const codeDiv = document.getElementById('generatedCode').firstChild;
 const outputDiv = document.getElementById('output');
 const blocklyDiv = document.getElementById('blocklyDiv');
-const ws = Blockly.inject(blocklyDiv, {toolbox});
+const ws = Blockly.inject(blocklyDiv, {
+  toolbox,
+  renderer: 'jsBlocks_renderer',
+});
 
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
