@@ -8,6 +8,7 @@ import {blocks} from './blocks/text.js';
 import {forBlock} from './generators/javascript.js';
 import {save, load} from './serialization.js';
 import {toolbox} from './toolbox.js';
+import {theme} from './renderers/jsBlocksTheme.js';
 import './renderers/jsBlocksZelos.js'
 
 const javascriptGenerator = Blockly.JavaScript;
@@ -23,6 +24,7 @@ const blocklyDiv = document.getElementById('blocklyDiv');
 const ws = Blockly.inject(blocklyDiv, {
   toolbox,
   renderer: 'jsBlocks_renderer',
+  theme,
 });
 
 // This function resets the code and output divs, shows the
