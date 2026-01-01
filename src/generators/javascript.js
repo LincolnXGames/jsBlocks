@@ -8,10 +8,11 @@
 // Export all the code generators for our custom blocks,
 // but don't register them with Blockly yet.
 // This file has no side effects!
+const jsGenerator = Blockly.JavaScript
 export const forBlock = Object.create(null);
 
 forBlock['add_text'] = function (block, generator) {
-  const text = generator.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  const text = generator.valueToCode(block, 'TEXT', jsGenerator.ORDER_ATOMIC) || "''";
   const addText = generator.provideFunction_(
     'addText',
     `function ${generator.FUNCTION_NAME_PLACEHOLDER_}(text) {
