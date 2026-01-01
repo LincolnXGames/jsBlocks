@@ -105,7 +105,7 @@ export const toolbox = {
         },
         {
           kind: 'block',
-          type: 'text_join',
+          type: 'join_text',
         },
         {
           kind: 'block',
