@@ -124,8 +124,8 @@ forBlock['lists_contains'] = function (block, generator) {
 };
 
 forBlock['lists_numbers'] = function (block, generator) {
-  const from = generator.valueToCode(block, 'FROM', jsGenerator.ORDER_NONE);
-  const to = generator.valueToCode(block, 'TO', jsGenerator.ORDER_NONE);
+  const from = generator.valueToCode(block, 'FROM', jsGenerator.ORDER_NONE) || '0';
+  const to = generator.valueToCode(block, 'TO', jsGenerator.ORDER_NONE) || '0';
   const numbersFromTo = generator.provideFunction_(
     'numbersFromTo',
     `function ${generator.FUNCTION_NAME_PLACEHOLDER_}(from, to) {
@@ -139,4 +139,17 @@ forBlock['lists_numbers'] = function (block, generator) {
   );
   const code = `${numbersFromTo}(${from}, ${to})`;
   return [code, jsGenerator.ORDER_FUNCTION_CALL];
-}
+};
+
+forBlock['lists_count'] = function (block, generator) {
+  const item = generator.valueToCode(block, 'ITEM', jsGenerator.ORDER_NONE) || "''";
+  const list = generator.valueToCode(block, 'LIST', jsGenerator.ORDER_NONE) || '[]';
+  const listCount = generator.provideFunction_(
+    'listCount',
+    `function ${generator.FUNCTION_NAME_PLACEHOLDER_}(list, item) {
+  return list.filter((v) => (v === item)).length;
+}`,
+  );
+  const code = `${listCount}(${list}, ${item})`;
+  return [code, jsGenerator.ORDER_FUNCTION_CALL];
+};
