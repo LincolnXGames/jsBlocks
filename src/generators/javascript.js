@@ -110,8 +110,8 @@ forBlock['math_logical_or'] = function (block, generator) {
 };
 
 forBlock['math_strictly_equals'] = function (block, generator) {
-  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_EQUALITY);
-  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_EQUALITY);
+  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_EQUALITY) || '';
+  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_EQUALITY) || '';
   const code = value_a + ' === ' + value_b;
   return [code, jsGenerator.ORDER_EQUALITY];
 };
