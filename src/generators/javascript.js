@@ -122,3 +122,21 @@ forBlock['lists_contains'] = function (block, generator) {
   const code = list + '.includes(' + item + ')';
   return [code, jsGenerator.ORDER_MEMBER];
 };
+
+forBlock['lists_numbers'] = function (block, generator) {
+  const from = generator.valueToCode(block, 'FROM', jsGenerator.ORDER_NONE);
+  const to = generator.valueToCode(block, 'TO', jsGenerator.ORDER_NONE);
+  const numbersFromTo = generator.provideFunction_(
+    'numbersFromTo',
+    `function ${generator.FUNCTION_NAME_PLACEHOLDER_}(from, to) {
+  const numbers = [];
+  const inc = from > to ? -1 : 1
+  for (let i = from; inc >= 0 ? i <= to : i >= to; i += inc) {
+    numbers.push(i);
+  }
+  return numbers;
+}`,
+  );
+  const code = `${numbersFromTo}(${from}, ${to})`;
+  return [code, jsGenerator.ORDER_FUNCTION_CALL];
+}
