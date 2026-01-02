@@ -115,3 +115,10 @@ forBlock['math_strictly_equals'] = function (block, generator) {
   const code = value_a + ' === ' + value_b;
   return [code, jsGenerator.ORDER_EQUALITY];
 };
+
+forBlock['lists_contains'] = function (block, generator) {
+  const list = generator.valueToCode(block, 'LIST', jsGenerator.ORDER_MEMBER) || '[]';
+  const item = generator.valueToCode(block, 'ITEM', jsGenerator.ORDER_MEMBER) || '';
+  const code = list + '.includes(' + item + ')';
+  return [code, jsGenerator.ORDER_MEMBER];
+};
