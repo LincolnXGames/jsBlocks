@@ -36,10 +36,30 @@ const mathLogicalOr = {
   ],
   "output": null,
   "style": "math_blocks",
-  "inputsInline": true
+  "inputsInline": true,
+}
+const mathStrictlyEquals = {
+  "type": "math_strictly_equals",
+  "tooltip": "Returns true if both inputs are strictly the same.",
+  "helpUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
+  "message0": "%1 is exactly %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "A"
+    },
+    {
+      "type": "input_value",
+      "name": "B"
+    }
+  ],
+  "output": "Boolean",
+  "style": "math_blocks",
+  "inputsInline": true,
 }
 
 export const operatorsBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   mathMod,
   mathLogicalOr,
+  mathStrictlyEquals,
 ]);
