@@ -50,7 +50,7 @@ forBlock['add_text'] = function (block, generator) {
 };
 
 forBlock['text_input'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT');
+  const text_text = block.getFieldValue('TEXT') || '';
   const quote = (string) => {
     string = string
       .replace(/\\/g, '\\\\')
@@ -63,7 +63,7 @@ forBlock['text_input'] = function (block, generator) {
 };
 
 forBlock['num_text'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT');
+  const text_text = block.getFieldValue('TEXT') || '';
   const numerable = (string) => {
     const coercedValue = Number(string);
     if (!isNaN(coercedValue) && isFinite(coercedValue)) {
@@ -90,7 +90,14 @@ forBlock['join_text'] = function (block, generator) {
 };
 
 forBlock['text_to_string'] = function (block, generator) {
-  const value_text = generator.valueToCode(block, 'TEXT', jsGenerator.ORDER_FUNCTION_CALL);
+  const value_text = generator.valueToCode(block, 'TEXT', jsGenerator.ORDER_FUNCTION_CALL) || '';
   const code = `String(${value_text})`;
   return [code, jsGenerator.ORDER_FUNCTION_CALL];
+};
+
+forBlock['math_mod'] = function() {
+  const dividend = generator.valueToCode(block, 'DIVIDEND', jsGenerator.ORDER_MODULUS) || '0';
+  const divisor = generator.valueToCode(block, 'DIVISOR', jsGenerator.ORDER_MODULUS) || '0';
+  const code = dividend + ' % ' + divisor;
+  return [code, jsGenerator.ORDER_MODULUS];
 };
