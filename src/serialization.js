@@ -5,7 +5,7 @@
  */
 
 
-const storageKey = 'workspace';
+const storageKey = 'mainWorkspace';
 
 /**
  * Saves the state of the workspace to browser's local storage.
