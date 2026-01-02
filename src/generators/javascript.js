@@ -50,7 +50,7 @@ forBlock['add_text'] = function (block, generator) {
 };
 
 forBlock['text_input'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT') || "''";
+  const text_text = block.getFieldValue('TEXT') || '';
   const quote = (string) => {
     string = string
       .replace(/\\/g, '\\\\')
@@ -63,7 +63,7 @@ forBlock['text_input'] = function (block, generator) {
 };
 
 forBlock['num_text'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT') || "''";
+  const text_text = block.getFieldValue('TEXT') || '';
   const numerable = (string) => {
     const coercedValue = Number(string);
     if (!isNaN(coercedValue) && isFinite(coercedValue)) {
