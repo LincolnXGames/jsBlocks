@@ -59,9 +59,31 @@ const listsCount = {
   "style": "list_blocks",
   "inputsInline": true
 };
+const listsMerge = {
+  "type": "lists_merge",
+  "tooltip": "Returns a new list with the second list appended onto the first.",
+  "helpUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat",
+  "message0": "merge %1 with %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "A",
+      "check": "Array"
+    },
+    {
+      "type": "input_value",
+      "name": "B",
+      "check": "Array"
+    }
+  ],
+  "output": "Array",
+  "style": "list_blocks",
+  "inputsInline": true
+};
 
 export const listsBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   listsContains,
   listsNumbers,
   listsCount,
+  listsMerge
 ]);
