@@ -742,6 +742,10 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'lists_merge',
+        },
+        {
+          kind: 'block',
           type: 'lists_split',
           inputs: {
             DELIM: {
