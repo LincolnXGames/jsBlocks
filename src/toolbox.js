@@ -638,6 +638,28 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'lists_numbers',
+          inputs: {
+            FROM: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+            TO: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 10,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
           type: 'lists_length',
         },
         {
