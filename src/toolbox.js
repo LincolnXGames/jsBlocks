@@ -416,7 +416,7 @@ export const toolbox = {
         },
         {
           kind: 'block',
-          type: 'math_modulo',
+          type: 'math_mod',
           inputs: {
             DIVIDEND: {
               shadow: {
