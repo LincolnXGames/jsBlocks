@@ -756,6 +756,20 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'lists_count',
+          inputs: {
+            ITEM: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
           type: 'lists_sort',
         },
         {
