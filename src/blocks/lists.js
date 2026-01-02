@@ -38,9 +38,30 @@ const listsNumbers = {
   "output": "Array",
   "style": "list_blocks",
   "inputsInline": true,
-}
+};
+const listsCount = {
+  "type": "lists_count",
+  "tooltip": "Returns the amount of times an item appears in a list.",
+  "helpUrl": "",
+  "message0": "count %1 in %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "ITEM"
+    },
+    {
+      "type": "input_value",
+      "name": "LIST",
+      "check": "Array"
+    }
+  ],
+  "output": "Number",
+  "style": "list_blocks",
+  "inputsInline": true
+};
 
 export const listsBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   listsContains,
   listsNumbers,
+  listsCount,
 ]);
