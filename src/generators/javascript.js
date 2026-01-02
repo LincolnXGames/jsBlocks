@@ -50,7 +50,7 @@ forBlock['add_text'] = function (block, generator) {
 };
 
 forBlock['text_input'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT') || '';
+  const text_text = block.getFieldValue('TEXT') || "''";
   const quote = (string) => {
     string = string
       .replace(/\\/g, '\\\\')
@@ -63,7 +63,7 @@ forBlock['text_input'] = function (block, generator) {
 };
 
 forBlock['num_text'] = function (block, generator) {
-  const text_text = block.getFieldValue('TEXT') || '';
+  const text_text = block.getFieldValue('TEXT') || "''";
   const numerable = (string) => {
     const coercedValue = Number(string);
     if (!isNaN(coercedValue) && isFinite(coercedValue)) {
@@ -83,8 +83,8 @@ forBlock['num_text'] = function (block, generator) {
 };
 
 forBlock['join_text'] = function (block, generator) {
-  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_NONE) || '';
-  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_NONE) || '';
+  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_NONE) || "''";
+  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_NONE) || "''";
   const code = forceString(value_a) + ' + ' + forceString(value_b);
   return [code, jsGenerator.ORDER_ADDITION];
 };
@@ -110,8 +110,8 @@ forBlock['math_logical_or'] = function (block, generator) {
 };
 
 forBlock['math_strictly_equals'] = function (block, generator) {
-  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_EQUALITY) || '';
-  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_EQUALITY) || '';
+  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_EQUALITY) || "''";
+  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_EQUALITY) || "''";
   const code = value_a + ' === ' + value_b;
   return [code, jsGenerator.ORDER_EQUALITY];
 };
