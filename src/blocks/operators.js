@@ -16,8 +16,8 @@ const mathMod = {
     }
   ],
   "output": "Number",
-  "style": "math_blocks"
-  "inputsInline": true
+  "style": "math_blocks",
+  "inputsInline": true,
 }
 
 export const operatorsBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
