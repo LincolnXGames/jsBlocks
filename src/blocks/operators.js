@@ -19,7 +19,27 @@ const mathMod = {
   "style": "math_blocks",
   "inputsInline": true,
 }
+const mathLogicalOr = {
+  "type": "math_logical_or",
+  "tooltip": "If the first value is truthy, then return it. Otherwise returns the second value.",
+  "helpUrl": "https://en.wikipedia.org/wiki/Logical_disjunction",
+  "message0": "%1 or else %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "A"
+    },
+    {
+      "type": "input_value",
+      "name": "B"
+    }
+  ],
+  "output": null,
+  "style": "math_blocks",
+  "inputsInline": true
+}
 
 export const operatorsBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   mathMod,
+  mathLogicalOr,
 ]);
