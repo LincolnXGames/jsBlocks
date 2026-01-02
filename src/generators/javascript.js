@@ -101,3 +101,10 @@ forBlock['math_mod'] = function (block, generator) {
   const code = dividend + ' % ' + divisor;
   return [code, jsGenerator.ORDER_MODULUS];
 };
+
+forBlock['math_logical_or'] = function (block, generator) {
+  const value_a = generator.valueToCode(block, 'A', jsGenerator.ORDER_LOGICAL_OR) || 'false';
+  const value_b = generator.valueToCode(block, 'B', jsGenerator.ORDER_LOGICAL_OR) || 'false';
+  const code = value_a + ' || ' + value_b;
+  return [code, jsGenerator.ORDER_LOGICAL_OR];
+};
