@@ -97,10 +97,6 @@ export const toolbox = {
       contents: [
         {
           kind: 'block',
-          type: 'num_text',
-        },
-        {
-          kind: 'block',
           type: 'text',
         },
         {
