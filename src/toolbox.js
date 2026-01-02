@@ -516,6 +516,28 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'math_logical_or',
+          inputs: {
+            A: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+            B: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
           type: 'logic_compare',
           inputs: {
             A: {
