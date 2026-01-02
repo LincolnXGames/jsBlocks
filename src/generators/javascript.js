@@ -31,6 +31,8 @@ forBlock['custom_ternary'] = function (block, generator) {
   return [code, jsGenerator.ORDER_CONDITIONAL];
 };
 
+
+
 forBlock['add_text'] = function (block, generator) {
   const text = generator.valueToCode(block, 'TEXT', jsGenerator.ORDER_ATOMIC) || "''";
   const addText = generator.provideFunction_(
@@ -95,6 +97,8 @@ forBlock['text_to_string'] = function (block, generator) {
   return [code, jsGenerator.ORDER_FUNCTION_CALL];
 };
 
+
+
 forBlock['math_mod'] = function (block, generator) {
   const dividend = generator.valueToCode(block, 'DIVIDEND', jsGenerator.ORDER_MODULUS) || '0';
   const divisor = generator.valueToCode(block, 'DIVISOR', jsGenerator.ORDER_MODULUS) || '0';
@@ -115,6 +119,8 @@ forBlock['math_strictly_equals'] = function (block, generator) {
   const code = value_a + ' === ' + value_b;
   return [code, jsGenerator.ORDER_EQUALITY];
 };
+
+
 
 forBlock['lists_contains'] = function (block, generator) {
   const list = generator.valueToCode(block, 'LIST', jsGenerator.ORDER_MEMBER) || '[]';
@@ -152,4 +158,11 @@ forBlock['lists_count'] = function (block, generator) {
   );
   const code = `${listCount}(${list}, ${item})`;
   return [code, jsGenerator.ORDER_FUNCTION_CALL];
+};
+
+forBlock['lists_merge'] = function (block, generator) {
+  const lista = generator.valueToCode(block, 'A', jsGenerator.ORDER_MEMBER) || '[]';
+  const listb = generator.valueToCode(block, 'B', jsGenerator.ORDER_MEMBER) || '[]';
+  const code = lista + '.concat(' + listb + ')';
+  return [code, jsGenerator.ORDER_MEMBER];
 };
