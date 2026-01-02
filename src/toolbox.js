@@ -646,6 +646,20 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'lists_contains',
+          inputs: {
+            ITEM: {
+              shadow: {
+                type: 'num_text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
           type: 'lists_indexOf',
           inputs: {
             VALUE: {
