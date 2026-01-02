@@ -95,7 +95,7 @@ forBlock['text_to_string'] = function (block, generator) {
   return [code, jsGenerator.ORDER_FUNCTION_CALL];
 };
 
-forBlock['math_mod'] = function() {
+forBlock['math_mod'] = function (block, generator) {
   const dividend = generator.valueToCode(block, 'DIVIDEND', jsGenerator.ORDER_MODULUS) || '0';
   const divisor = generator.valueToCode(block, 'DIVISOR', jsGenerator.ORDER_MODULUS) || '0';
   const code = dividend + ' % ' + divisor;
